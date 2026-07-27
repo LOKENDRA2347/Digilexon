@@ -1,0 +1,14 @@
+# Ignore Python temporary/cached files
+__pycache__/
+*.pyc
+
+# Ignore your virtual environment folder
+venv/
+.venv/
+env/
+
+# Ignore local database (if you don't want your local data uploaded)
+db.sqlite3
+
+# Ignore environment/secret files
+.env

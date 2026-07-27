@@ -1,0 +1,14 @@
+<nav class="wrap">
+    <a href="{% url 'home' %}" class="logo"><span class="dot"></span>{{ site_settings.company_name }}</a>
+    <ul class="nav-links">
+      <li><a href="{% url 'services' %}">Services</a></li>
+      <li><a href="{% url "process" %}">Process</a></li>
+      <li><a href="{% url "work" %}">Work</a></li>
+      <li><a href="{% url "pricing" %}">Pricing</a></li>
+      <li><a href="{% url "faq" %}">FAQ</a></li>
+      <li><a href="{% url "contact" %}">Contact</a></li>
+    </ul>
+
+    <a href="{% url "contact" %}" class="nav-cta">Start a project →</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </nav>

@@ -1,0 +1,325 @@
+{% extends 'base.html' %}
+{% block title %}
+Home | DigiLexon
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<!-- HERO -->
+  <section class="hero">
+    <canvas id="particleField"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1" data-depth="0.04"></div>
+    <div class="orb orb-2" data-depth="0.07"></div>
+    <div class="orb orb-3" data-depth="0.1"></div>
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Digital Marketing Studio</div>
+      <h1 id="heroHeadline">We turn attention into <em>revenue,</em> not just impressions.</h1>
+      <p class="hero-sub">Digilexon is a performance-driven marketing studio for brands that are done guessing. Strategy, creative, and media — built as one system, measured against one number: growth.</p>
+      <div class="btn-row">
+        <span class="magnetic"><a href="{% url "contact" %}" class="btn btn-primary">Book a strategy call</a></span>
+        <span class="magnetic"><a href="{% url "work" %}" class="btn btn-ghost">See our work <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4"/></svg></a></span>
+      </div>
+      <div class="signal-wrap">
+        <svg viewBox="0 0 1200 140" preserveAspectRatio="none">
+          <path class="signal-path" d="M0 100 C 100 100, 130 40, 200 60 S 320 110, 400 70 S 520 10, 600 50 S 720 120, 800 60 S 920 20, 1000 55 S 1150 90, 1200 40" />
+          <path class="signal-path blue" d="M0 80 C 120 80, 160 120, 240 90 S 360 30, 440 80 S 560 130, 640 90 S 760 20, 840 70 S 960 110, 1050 65 S 1150 40, 1200 80" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span>SEO</span><span>Paid Media</span><span>Brand Strategy</span><span>Content</span><span>Social</span><span>CRO</span><span>Analytics</span><span>Marketing Automation</span>
+      <span>SEO</span><span>Paid Media</span><span>Brand Strategy</span><span>Content</span><span>Social</span><span>CRO</span><span>Analytics</span><span>Marketing Automation</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap stats-grid reveal-stagger">
+      <div>
+        <div class="stat-num"><span class="counter" data-target="180">0</span><span>+</span></div>
+        <div class="stat-label">CAMPAIGNS LAUNCHED</div>
+      </div>
+      <div>
+        <div class="stat-num"><span class="counter" data-target="4">0</span><span>.8x</span></div>
+        <div class="stat-label">AVG. CLIENT ROAS</div>
+      </div>
+      <div>
+        <div class="stat-num"><span class="counter" data-target="92">0</span><span>%</span></div>
+        <div class="stat-label">CLIENT RETENTION</div>
+      </div>
+      <div>
+        <div class="stat-num"><span class="counter" data-target="14">0</span><span></span></div>
+        <div class="stat-label">COUNTRIES SERVED</div>
+      </div>
+    </div>
+  </section>
+  <!-- SERVICES -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Everything a growth engine needs, under one roof.</h2>
+        <p>
+          We don't hand you off between departments. One strategy, one team,
+          every channel pulling the same direction.
+        </p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="services-grid reveal-stagger">
+
+        {% for service in featured_services %}
+
+        <div class="service-card tilt">
+          <div class="tilt-glare"></div>
+
+          <div class="service-index">
+            {{ forloop.counter|stringformat:"02d" }}
+          </div>
+
+          <h3>{{ service.title }}</h3>
+
+          <p>{{ service.short_description }}</p>
+
+        </div>
+
+        {% empty %}
+
+        <p>No services found.</p>
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <div class="wrap" style="margin-top:50px;">
+      <span class="magnetic">
+        <a href="{% url 'services' %}" class="btn btn-ghost">
+          All services
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path
+             d="M1 5H15M15 5L11 1M15 5L11 9"
+             stroke="currentColor"
+             stroke-width="1.4"
+            />
+          </svg>
+        </a>
+      </span>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>How an engagement actually runs.</h2>
+        <p>Five stages, repeated in a loop — because growth isn't a one-time project.</p>
+      </div>
+      <div class="process-list reveal">
+        <div class="process-row">
+          <div class="process-num">01</div>
+          <h3>Discover</h3>
+          <div class="process-desc">Audit your market, funnel, and current channels to find where growth is actually being lost.</div>
+        </div>
+        <div class="process-row">
+          <div class="process-num">02</div>
+          <h3>Strategize</h3>
+          <div class="process-desc">Build a channel plan and a 90-day roadmap tied to specific, agreed revenue targets.</div>
+        </div>
+        <div class="process-row">
+          <div class="process-num">03</div>
+          <h3>Launch</h3>
+          <div class="process-desc">Ship creative, campaigns, and pages in weekly sprints — not one long silent build phase.</div>
+        </div>
+        <div class="process-row">
+          <div class="process-num">04</div>
+          <h3>Optimize</h3>
+          <div class="process-desc">Weekly testing and reporting against the numbers that matter, not vanity metrics.</div>
+        </div>
+        <div class="process-row">
+          <div class="process-num">05</div>
+          <h3>Scale</h3>
+          <div class="process-desc">Double down on what's working and expand into new channels with a proven playbook.</div>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <span class="magnetic"><a href="{% url "process" %}" class="btn btn-ghost">Full process <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4"/></svg></a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Recent work.</h2>
+        <p>A few engagements where the strategy actually moved the number.</p>
+      </div>
+      <div class="work-grid reveal-stagger">
+        <div class="work-card tilt"><div class="tilt-glare"></div>
+          <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-northline/800/500" alt="Northline Home Goods case study" loading="lazy"></div><span class="work-tag">D2C · Performance</span>
+          <h3>Northline Home Goods</h3>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Rebuilt the paid media stack and product pages to fix a stalled acquisition funnel.</p>
+          <div class="work-metrics">
+            <div><span>3.1x</span><small>ROAS LIFT</small></div>
+            <div><span>−41%</span><small>CAC</small></div>
+          </div>
+        </div>
+        <div class="work-card tilt"><div class="tilt-glare"></div>
+          <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-ledgerly/800/500" alt="Ledgerly Finance case study" loading="lazy"></div><span class="work-tag">B2B SaaS · SEO</span>
+          <h3>Ledgerly Finance</h3>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Content and technical SEO program to break out of a page-two plateau in a crowded category.</p>
+          <div class="work-metrics">
+            <div><span>212%</span><small>ORGANIC TRAFFIC</small></div>
+            <div><span>6mo</span><small>TO RANK #1</small></div>
+          </div>
+        </div>
+        <div class="work-card tilt"><div class="tilt-glare"></div>
+          <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-kessho/800/500" alt="Kessho Hotels case study" loading="lazy"></div><span class="work-tag">Hospitality · Brand</span>
+          <h3>Kessho Hotels</h3>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Repositioned the brand and rebuilt booking funnel creative across five properties.</p>
+          <div class="work-metrics">
+            <div><span>58%</span><small>DIRECT BOOKINGS</small></div>
+            <div><span>+27%</span><small>AVG. BOOKING VALUE</small></div>
+          </div>
+        </div>
+        <div class="work-card tilt"><div class="tilt-glare"></div>
+          <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-alto/800/500" alt="Alto Fitness case study" loading="lazy"></div><span class="work-tag">Retail · CRO</span>
+          <h3>Alto Fitness</h3>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Funnel and landing page testing program across app install and membership campaigns.</p>
+          <div class="work-metrics">
+            <div><span>2.4x</span><small>CONVERSION RATE</small></div>
+            <div><span>−33%</span><small>COST PER SIGNUP</small></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <span class="magnetic"><a href="{% url "work" %}" class="btn btn-ghost">All work <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4"/></svg></a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap expertise">
+      <div class="reveal about-collage">
+        <div class="about-badge"><span>7+</span><small>Yrs Running</small></div>
+        <div class="about-img-1"><img src="https://picsum.photos/seed/digilexon-about1/700/900" alt="Digilexon team at work" loading="lazy"></div>
+        <div class="about-img-2"><img src="https://picsum.photos/seed/digilexon-about2/700/700" alt="Digilexon campaign planning session" loading="lazy"></div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Why Digilexon</div>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);margin-bottom:22px;">Built by people who've sat on the client side of the table.</h2>
+        <p style="color:var(--muted);font-size:15.5px;line-height:1.7;">We've run in-house marketing teams ourselves — which is why we report on outcomes, not activity, and treat your budget like it's coming out of our own account.</p>
+        <div style="margin-top:36px;">
+        <div class="bar-row">
+          <div class="bar-top"><span>Strategy &amp; Positioning</span><span class="pct">95%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-pct="95"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-top"><span>Creative Execution</span><span class="pct">89%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-pct="89"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-top"><span>Performance &amp; Media Buying</span><span class="pct">93%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-pct="93"></div></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>What clients say.</h2>
+        <p>We keep engagements small enough that every client is a reference client.</p>
+      </div>
+      <div class="testi-grid reveal-stagger">
+        <div class="testi-card tilt"><div class="tilt-glare"></div>
+          <p class="testi-quote">"Digilexon rebuilt our funnel in six weeks and our cost per acquisition finally made sense on a spreadsheet."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">AR</div>
+            <div>
+              <div class="testi-name">Aisha Rahman</div>
+              <div class="testi-role">Head of Growth, Northline</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card tilt"><div class="tilt-glare"></div>
+          <p class="testi-quote">"The first agency that reported on revenue instead of reach. That alone changed how we plan our year."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">MV</div>
+            <div>
+              <div class="testi-name">Marco Vieira</div>
+              <div class="testi-role">Founder, Kessho Hotels</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap" style="max-width:820px;">
+      <div class="section-head reveal" style="margin-bottom:40px;">
+        <h2>Frequently asked questions.</h2>
+      </div>
+      <div class="reveal" id="faqList">
+        <div class="faq-item">
+          <div class="faq-q">What size of business do you work with?<span class="plus">+</span></div>
+          <div class="faq-a"><p>Mostly growth-stage D2C, SaaS, and services businesses spending at least ₹3–5 lakh/month on marketing — enough budget for testing to produce a real signal.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How fast do we see results?<span class="plus">+</span></div>
+          <div class="faq-a"><p>Paid media typically shows directional signal within 3–4 weeks. SEO and brand work compound over 3–6 months — we set expectations by channel up front.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you require long-term contracts?<span class="plus">+</span></div>
+          <div class="faq-a"><p>We start with a 90-day engagement so both sides can evaluate fit, then move to a rolling monthly retainer.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Who actually works on my account?<span class="plus">+</span></div>
+          <div class="faq-a"><p>A dedicated strategist and channel specialists — not a rotating cast of junior executives. You'll know everyone on your team by name.</p></div>
+        </div>
+      </div>
+      <div style="margin-top:30px;">
+        <span class="magnetic"><a href="{% url "faq" %}" class="btn btn-ghost">More questions <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4"/></svg></a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section style="border-top:1px solid var(--line);">
+    <div class="gallery-strip reveal-stagger">
+      <div class="gallery-item"><img src="https://picsum.photos/seed/digilexon-g1/400/400" alt="Campaign shoot" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/digilexon-g2/400/400" alt="Studio session" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/digilexon-g3/400/400" alt="Client workshop" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/digilexon-g4/400/400" alt="Content production" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/digilexon-g5/400/400" alt="Team strategy session" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://picsum.photos/seed/digilexon-g6/400/400" alt="Brand shoot" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center;">Let's talk</div>
+      <h2>Ready to make your marketing budget accountable?</h2>
+      <div class="btn-row">
+        <span class="magnetic"><a href="{% url "contact" %}" class="btn btn-primary">Start a project</a></span>
+        <span class="magnetic"><a href="mailto:{{site_settings.email}}" class="btn btn-ghost">{{site_settings.email}}</a></span>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

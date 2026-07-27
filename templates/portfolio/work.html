@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block title %}
+    WORK | DigiLexon
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<section class="page-hero">
+    <canvas id="particleField"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1" data-depth="0.04"></div>
+    <div class="orb orb-2" data-depth="0.07"></div>
+    <div class="wrap hero-inner">
+        <div class="breadcrumb"><a href="{% url 'home' %}">Home</a><span>/</span><span>Work</span></div>
+        <div class="eyebrow">Selected work</div>
+        <h1 id="heroHeadline">Case studies where strategy <em>moved the number.</em></h1>
+        <p class="hero-sub">A handful of engagements across D2C, SaaS, hospitality, and retail — with the actual metrics attached.</p>
+    </div>
+</section>
+
+<section class="section-pad" style="padding-top:70px;">
+    <div class="wrap">
+        <div class="work-grid reveal-stagger">
+
+            {% for project in projects %}
+                <div class="work-card tilt">
+                    <div class="tilt-glare"></div>
+
+                    <div class="work-thumb">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy">
+                    </div>
+
+                    <span class="work-tag">
+                        {{ project.category }}
+                    </span>
+
+                    <h3>{{ project.title }}</h3>
+
+                    <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">
+                        {{ project.short_description }}
+                    </p>
+
+                    <div class="work-metrics">
+                        <div>
+                            <span>{{ project.result_one }}</span>
+                            <small>{{ project.result_one_title }}</small>
+                        </div>
+                        <div>
+                            <span>{{ project.result_two }}</span>
+                            <small>{{ project.result_two_title }}</small>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <!-- Hardcoded backup projects display cleanly inside the same grid if database is empty -->
+                <div class="work-card tilt">
+                    <div class="tilt-glare"></div>
+                    <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-northline/800/500" alt="Northline Home Goods case study" loading="lazy"></div>
+                    <span class="work-tag">D2C · Performance</span>
+                    <h3>Northline Home Goods</h3>
+                    <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Rebuilt the paid media stack and product pages to fix a stalled acquisition funnel.</p>
+                    <div class="work-metrics">
+                        <div><span>3.1x</span><small>ROAS LIFT</small></div>
+                        <div><span>−41%</span><small>CAC</small></div>
+                    </div>
+                </div>
+
+                <div class="work-card tilt">
+                    <div class="tilt-glare"></div>
+                    <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-ledgerly/800/500" alt="Ledgerly Finance case study" loading="lazy"></div>
+                    <span class="work-tag">B2B SaaS · SEO</span>
+                    <h3>Ledgerly Finance</h3>
+                    <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Content and technical SEO program to break out of a page-two plateau in a crowded category.</p>
+                    <div class="work-metrics">
+                        <div><span>212%</span><small>ORGANIC TRAFFIC</small></div>
+                        <div><span>6mo</span><small>TO RANK #1</small></div>
+                    </div>
+                </div>
+
+                <div class="work-card tilt">
+                    <div class="tilt-glare"></div>
+                    <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-kessho/800/500" alt="Kessho Hotels case study" loading="lazy"></div>
+                    <span class="work-tag">Hospitality · Brand</span>
+                    <h3>Kessho Hotels</h3>
+                    <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Repositioned the brand and rebuilt booking funnel creative across five properties.</p>
+                    <div class="work-metrics">
+                        <div><span>58%</span><small>DIRECT BOOKINGS</small></div>
+                        <div><span>+27%</span><small>AVG. BOOKING VALUE</small></div>
+                    </div>
+                </div>
+
+                <div class="work-card tilt">
+                    <div class="tilt-glare"></div>
+                    <div class="work-thumb"><img src="https://picsum.photos/seed/digilexon-alto/800/500" alt="Alto Fitness case study" loading="lazy"></div>
+                    <span class="work-tag">Retail · CRO</span>
+                    <h3>Alto Fitness</h3>
+                    <p style="color:var(--muted);font-size:14.5px;line-height:1.6;">Funnel and landing page testing program across app install and membership campaigns.</p>
+                    <div class="work-metrics">
+                        <div><span>2.4x</span><small>CONVERSION RATE</small></div>
+                        <div><span>−33%</span><small>COST PER SIGNUP</small></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <h2>What clients say.</h2>
+            <p>We keep engagements small enough that every client is a reference client.</p>
+        </div>
+        <div class="testi-grid reveal-stagger">
+            <div class="testi-card tilt">
+                <div class="tilt-glare"></div>
+                <p class="testi-quote">"Digilexon rebuilt our funnel in six weeks and our cost per acquisition finally made sense on a spreadsheet."</p>
+                <div class="testi-person">
+                    <div class="testi-avatar">AR</div>
+                    <div>
+                        <div class="testi-name">Aisha Rahman</div>
+                        <div class="testi-role">Head of Growth, Northline</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card tilt">
+                <div class="tilt-glare"></div>
+                <p class="testi-quote">"The first agency that reported on revenue instead of reach. That alone changed how we plan our year."</p>
+                <div class="testi-person">
+                    <div class="testi-avatar">MV</div>
+                    <div>
+                        <div class="testi-name">Marco Vieira</div>
+                        <div class="testi-role">Founder, Kessho Hotels</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+    <div class="wrap">
+        <div class="eyebrow" style="justify-content:center;">Let's talk</div>
+        <h2>Ready to make your marketing budget accountable?</h2>
+        <div class="btn-row">
+            <span class="magnetic"><a href="{% url "contact" %}" class="btn btn-primary">Start a project</a></span>
+            <span class="magnetic"><a href="mailto:{{ site_settings.email }}" class="btn btn-ghost">{{ site_settings.email }}</a></span>
+        </div>
+    </div>
+</section>
+{% endblock %}

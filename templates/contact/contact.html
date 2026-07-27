@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact | DigiLexon
+{% endblock %}
+
+{% load static %}
+{% block content %}
+ <section class="page-hero">
+    <canvas id="particleField"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1" data-depth="0.04"></div>
+    <div class="orb orb-2" data-depth="0.07"></div>
+    <div class="wrap hero-inner">
+      <div class="breadcrumb"><a href="{% url "home" %}">Home</a><span>/</span><span>Contact</span></div>
+      <div class="eyebrow">Get in touch</div>
+      <h1 id="heroHeadline">Let's build your <em>growth engine.</em></h1>
+      <p class="hero-sub">Tell us about your business and current channels. We reply within one business day.</p>
+    </div>
+  </section>
+  <section class="section-pad" style="padding-top:70px;">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="field">
+                <label for="cName">Full name</label>
+                <input
+                    type="text"
+                    id="cName"
+                    name="name"
+                    placeholder="Your name"
+                    required>
+            </div>
+
+            <div class="field">
+                <label for="cEmail">Work email</label>
+                <input
+                    type="email"
+                    id="cEmail"
+                    name="email"
+                    placeholder="you@company.com"
+                    required>
+            </div>
+
+            <div class="field">
+                <label for="cCompany">Company</label>
+                <input
+                    type="text"
+                    id="cCompany"
+                    name="company"
+                    placeholder="Company name">
+            </div>
+
+            <div class="field">
+                <label for="cBudget">Monthly marketing budget</label>
+                <select
+                    id="cBudget"
+                    name="budget">
+
+                    <option value="Under ₹3 lakh">Under ₹3 lakh</option>
+                    <option value="₹3–10 lakh">₹3–10 lakh</option>
+                    <option value="₹10–25 lakh">₹10–25 lakh</option>
+                    <option value="₹25 lakh+">₹25 lakh+</option>
+
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="cMsg">What are you looking to grow?</label>
+            <textarea
+                id="cMsg"
+                name="message"
+                placeholder="Tell us about your business and goals"
+                required></textarea>
+            </div>
+
+            <span class="magnetic">
+                <button type="submit" class="contact-submit">
+                Send Message
+                </button>
+            </span>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="form-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        </form>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Direct contact</div>
+        <div class="contact-info-item">
+          <h4>Email</h4>
+          <a href="mailto:{{site_settings.email}}">{{site_settings.email}}</a>
+        </div>
+        <div class="contact-info-item">
+          <h4>Phone</h4>
+          <a href="tel:{{site_settings.phone}}">{{site_settings.phone}}</a>
+        </div>
+        <div class="contact-info-item">
+          <h4>Studio</h4>
+          <p>{{site_settings.address}}</p>
+        </div>
+        <div class="contact-info-item">
+          <h4>Response time</h4>
+          <p>Within 1 business day</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center;">Let's talk</div>
+      <h2>Ready to make your marketing budget accountable?</h2>
+      <div class="btn-row">
+        <span class="magnetic"><a href="{% url "contact" %}" class="btn btn-primary">Start a project</a></span>
+        <span class="magnetic"><a href="mailto:{{site_settings.email}}" class="btn btn-ghost">{{site_settings.email}}</a></span>
+      </div>
+    </div>
+  </section>
+{% endblock %}

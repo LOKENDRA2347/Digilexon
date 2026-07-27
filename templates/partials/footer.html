@@ -1,0 +1,42 @@
+{% load static %}
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="{% url "home" %}" class="logo"><span class="dot"></span>{{ site_settings.company_name }}</a>
+        <p>A digital marketing studio for brands that measure success in revenue, not reach.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="{% url "services" %}">Services</a>
+        <a href="{% url "process" %}">Process</a>
+        <a href="{% url "work" %}">Work</a>
+        <a href="{% url "pricing" %}">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="{% url "faq" %}">FAQ</a>
+        <a href="{% url "contact" %}">Contact</a>
+        <a href="{% url "contact" %}">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+          <a href="mailto:{{ site_settings.email }}">
+            {{ site_settings.email }}
+          </a>
+
+          <a href="tel:{{ site_settings.phone }}">
+            {{ site_settings.phone }}
+          </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2022 DIGILEXON. ALL RIGHTS RESERVED.</p>
+      <div class="footer-social">
+        <a href="{{ site_settings.instagram }}" target="_blank">Instagram</a>
+        <a href="{{ site_settings.linkedin }}">LinkedIn</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% block title %}
+PRICING | DigiLexon
+{% endblock %}
+
+{% load static %}
+{% block content %}
+  <section class="page-hero">
+    <canvas id="particleField"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1" data-depth="0.04"></div>
+    <div class="orb orb-2" data-depth="0.07"></div>
+    <div class="wrap hero-inner">
+      <div class="breadcrumb"><a href="{% url "home" %}">Home</a><span>/</span><span>Pricing</span></div>
+      <div class="eyebrow">Investment structure</div>
+      <h1 id="heroHeadline">Transparent pricing, <em>no fine print.</em></h1>
+      <p class="hero-sub">Monthly structural subscriptions, one-time deployments, and a live estimator so you know the number before the first call.</p>
+    </div>
+  </section>
+<!-- SUITE I -->
+  <section class="section-pad" style="padding-top:70px;">
+    <div class="wrap">
+      <div class="eyebrow">Service Suite I</div>
+      <h2 style="font-size:clamp(26px,3.2vw,38px);margin-bottom:14px;max-width:24ch;" class="reveal">Brand Assets &amp; Creative Production</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:52ch;margin-bottom:40px;" class="reveal">One-time and per-piece creative work — zero generic AI content, every asset built from your own references.</p>
+      <div class="price-table-wrap reveal">
+        <table class="price-table">
+          <thead>
+            <tr><th>Digital Creative Service</th><th>Standard Rate (INR)</th><th>Quality &amp; Value Guarantee</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="svc-name">Logo Design</td><td class="rate">₹500 – ₹5,000</td><td class="desc">Bespoke vector design built purely from client conceptual references.</td></tr>
+            <tr><td class="svc-name">Graphic Designing</td><td class="rate">₹200 / Post</td><td class="desc">Custom visual layouts, bespoke typography hierarchy, tailored textures.</td></tr>
+            <tr><td class="svc-name">Motion Graphics</td><td>On Request</td><td class="desc">Dynamic frame-by-frame vector transitions designed to explain complex USPs.</td></tr>
+            <tr><td class="svc-name">Product Photography</td><td>On Request</td><td class="desc">Studio-lit tactile product captures focusing on actual materials and details.</td></tr>
+            <tr><td class="svc-name">Product Videos &amp; Commercials</td><td>On Request</td><td class="desc">Macro details, seamless dynamic panning shots, commercial-grade presentation.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUITE II -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="eyebrow">Service Suite II</div>
+      <h2 style="font-size:clamp(26px,3.2vw,38px);margin-bottom:14px;max-width:24ch;" class="reveal">Digital Real Estate &amp; Search Authority</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:52ch;margin-bottom:40px;" class="reveal">The web infrastructure that everything else points traffic toward.</p>
+      <div class="price-table-wrap reveal">
+        <table class="price-table">
+          <thead>
+            <tr><th>Web Infrastructure &amp; Discovery</th><th>Standard Rate (INR)</th><th>Performance Specifications</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="svc-name">Website Design &amp; Development</td><td class="rate">Starting ₹12,000</td><td class="desc">High-speed, SEO-ready, mobile-first responsive architecture.</td></tr>
+            <tr><td class="svc-name">Landing Page Design</td><td class="rate">₹5,000</td><td class="desc">Highly focused landing funnels optimized for lightning-fast user actions.</td></tr>
+            <tr><td class="svc-name">Local SEO (Google Business Profile)</td><td class="rate">₹4,000</td><td class="desc">Strategic citation stacking to rank you #1 in Jaipur and regional searches.</td></tr>
+            <tr><td class="svc-name">Catalog Management</td><td>On Request</td><td class="desc">Meticulous product classification, description copywriting, and structure mapping.</td></tr>
+            <tr><td class="svc-name">Product Listing Optimization</td><td>On Request</td><td class="desc">Rich search keyword integrations across e-commerce listing platforms.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUITE III -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="eyebrow">Service Suite III</div>
+      <h2 style="font-size:clamp(26px,3.2vw,38px);margin-bottom:14px;max-width:24ch;" class="reveal">Organic Dominance &amp; Content Creation</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:52ch;margin-bottom:40px;" class="reveal">Recurring SEO and content production, billed monthly or per deliverable.</p>
+      <div class="price-table-wrap reveal">
+        <table class="price-table">
+          <thead>
+            <tr><th>SEO &amp; Dynamic Content Services</th><th>Standard Rate (INR)</th><th>Deliverables &amp; Core Output Focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="svc-name">SEO (Standard – 10 Keywords)</td><td class="rate">₹10,000 / Month</td><td class="desc">Detailed ranking on 10 highly profitable local purchase keywords.</td></tr>
+            <tr><td class="svc-name">SEO (Growth – 25 Keywords)</td><td class="rate">₹15,000 / Month</td><td class="desc">Full-scale competitor search hijacking, premium off-page link building.</td></tr>
+            <tr><td class="svc-name">Social Media Management</td><td class="rate">₹4,999 / Month</td><td class="desc">Bespoke narrative calendars, grid curation, original caption drafts.</td></tr>
+            <tr><td class="svc-name">Reels Editing</td><td class="rate">₹1,500 / Reel</td><td class="desc">Intelligent sound design, manual textual captions, 3-second hook edits.</td></tr>
+            <tr><td class="svc-name">Video Editing (Long Form)</td><td class="rate">₹2,500 / Video</td><td class="desc">YouTube, documentary, or corporate video color grading and narrative-pacing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUITE IV -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="eyebrow">Service Suite IV</div>
+      <h2 style="font-size:clamp(26px,3.2vw,38px);margin-bottom:14px;max-width:24ch;" class="reveal">Performance Marketing &amp; CRM Systems</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:52ch;margin-bottom:40px;" class="reveal">Paid acquisition and the infrastructure that keeps leads from leaking.</p>
+      <div class="price-table-wrap reveal">
+        <table class="price-table">
+          <thead>
+            <tr><th>Performance Ads, CRM &amp; Tech Systems</th><th>Standard Rate (INR)</th><th>Execution Framework</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="svc-name">Meta Ads (Facebook &amp; Instagram)</td><td class="rate">₹8,000 / Month</td><td class="desc">Custom visual creative testing, exact target audience cohort setups.</td></tr>
+            <tr><td class="svc-name">Google Ads (Search, Display, YouTube)</td><td class="rate">₹10,000 / Month</td><td class="desc">High-yielding intent keyword bidding, optimized remarketing setups.</td></tr>
+            <tr><td class="svc-name">Lead Generation Funnels</td><td class="rate">₹8,000 / Month</td><td class="desc">Acquisition modeling mapped out specifically for big-ticket sectors.</td></tr>
+            <tr><td class="svc-name">CRM Setup &amp; Automation</td><td class="rate">₹10,000 (One-Time)</td><td class="desc">Seamless database centralizing, auto-responder workflows. Zero lead leakage.</td></tr>
+            <tr><td class="svc-name">Reputation Management (Online Reviews)</td><td>On Request</td><td class="desc">Aggregating real and verified local client review networks to build social trust.</td></tr>
+            <tr><td class="svc-name">AI Chatbot Setup</td><td>On Request</td><td class="desc">24/7 intelligent contextual reply pathways to immediately lock in visitors.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-MONTH COMMITMENT -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Multi-month commitment structure.</h2>
+        <p>Client packages — the longer the commitment, the more you save.</p>
+      </div>
+      <div class="price-table-wrap reveal">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Retainer Marketing Services</th>
+              <th>1 Month (Standard)</th>
+              <th>2 Months (5% off)</th>
+              <th>3 Months (10% off)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="svc-name">Social Media Management (Grid posting + content planning)</td><br>
+              <td class="rate">₹4,999</td>
+              <td class="rate">₹9,498 <span style="color:var(--muted-2);font-weight:400;">(Save ₹500)</span></td>
+              <td class="best">₹13,497 <span style="color:var(--muted-2);font-weight:400;">(Save ₹1,500)</span></td>
+            </tr>
+            <tr>
+              <td class="svc-name">Meta Ads Manager (FB &amp; Instagram optimization)</td>
+              <td class="rate">₹8,000</td>
+              <td class="rate">₹15,200 <span style="color:var(--muted-2);font-weight:400;">(Save ₹800)</span></td>
+              <td class="best">₹21,600 <span style="color:var(--muted-2);font-weight:400;">(Save ₹2,400)</span></td>
+            </tr>
+            <tr>
+              <td class="svc-name">Google Ads Campaigns (Search, Display, YT)</td>
+              <td class="rate">₹10,000</td>
+              <td class="rate">₹19,000 <span style="color:var(--muted-2);font-weight:400;">(Save ₹1,000)</span></td>
+              <td class="best">₹27,000 <span style="color:var(--muted-2);font-weight:400;">(Save ₹3,000)</span></td>
+            </tr>
+            <tr>
+              <td class="svc-name">Organic SEO (10 High-intent keywords)</td>
+              <td class="rate">₹10,000</td>
+              <td class="rate">₹19,000 <span style="color:var(--muted-2);font-weight:400;">(Save ₹1,000)</span></td>
+              <td class="best">₹27,000 <span style="color:var(--muted-2);font-weight:400;">(Save ₹3,000)</span></td>
+            </tr>
+            <tr>
+              <td class="svc-name">Local SEO &amp; Google Business Profile</td>
+              <td class="rate">₹4,000</td>
+              <td class="rate">₹7,600 <span style="color:var(--muted-2);font-weight:400;">(Save ₹400)</span></td>
+              <td class="best">₹10,800 <span style="color:var(--muted-2);font-weight:400;">(Save ₹1,200)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGISTICS -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap expertise">
+      <div class="reveal" style="border:1px solid var(--line);padding:56px 40px;text-align:center;">
+        <div style="font-family:'Unbounded',sans-serif;font-size:64px;font-weight:700;color:var(--accent);line-height:1;">13</div>
+        <div style="font-family:'Space Mono',monospace;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;margin-top:14px;">Specialist Team Members</div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Logistics &amp; power</div>
+        <h2 style="font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;">Engineered to operate anywhere.</h2>
+        <p style="color:var(--muted);font-size:15px;line-height:1.75;">We're rooted in Jaipur with a specialized 13-member team — front-end developers, SEO architects, video editors, and performance analysts — so every delivery comes from a subject specialist, not generic automation. Baseline pricing stays identical across state boundaries; for non-local shoots, actual travel, stay, and food costs are covered by the client directly at cost, with no markup or hidden agency commissions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATOR -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Bespoke blueprint estimator.</h2>
+        <p>Select the channels you need — the estimate updates as you go.</p>
+      </div>
+      <div class="estimator reveal">
+        <div class="estimator-left">
+          <div class="est-label">Select Channels</div>
+          <div class="check-grid">
+            <div class="check-row">
+              <input type="checkbox" id="svcMeta" class="est-check" data-price="8000" checked>
+              <label for="svcMeta">Meta Ads <b>₹8k</b></label>
+            </div>
+            <div class="check-row">
+              <input type="checkbox" id="svcGoogle" class="est-check" data-price="10000">
+              <label for="svcGoogle">Google Ads <b>₹10k</b></label>
+            </div>
+            <div class="check-row">
+              <input type="checkbox" id="svcLead" class="est-check" data-price="8000">
+              <label for="svcLead">Lead Gen Funnels <b>₹8k</b></label>
+            </div>
+            <div class="check-row">
+              <input type="checkbox" id="svcSmm" class="est-check" data-price="4999">
+              <label for="svcSmm">Social-Media Management <b>₹4.99k</b></label>
+            </div>
+            <div class="check-row">
+              <input type="checkbox" id="svcSeoStd" class="est-check" data-price="10000">
+              <label for="svcSeoStd">SEO – Standard <b>₹10k</b></label>
+            </div>
+            <div class="check-row">
+              <input type="checkbox" id="svcSeoLocal" class="est-check" data-price="4000">
+              <label for="svcSeoLocal">Local SEO / GBP <b>₹4k</b></label>
+            </div>
+          </div>
+          <div class="est-selects">
+            <div class="field">
+              <label for="retainerPlan">Retainer plan</label>
+              <select id="retainerPlan">
+                <option value="1" data-mult="1">1 Month (Standard)</option>
+                <option value="2" data-mult="1.9">2 Months (5% off)</option>
+                <option value="3" data-mult="2.7">3 Months (10% off)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="addonPlan">One-time add-ons</label>
+              <select id="addonPlan">
+                <option value="0">No Add-on Selected</option>
+                <option value="10000">CRM Setup (+₹10k one-time)</option>
+                <option value="12000">Website Design (+₹12k starting)</option>
+                <option value="5000">Landing Page (+₹5k)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="estimator-right">
+          <div class="est-label">Estimated Blueprint Investment</div>
+          <div class="est-amount" id="estAmount">₹8,000</div>
+          <p class="est-sub">Select custom channels to calculate baseline retainer plus any one-time add-on selected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+  // ===== pricing estimator =====
+  (function(){
+    const checks = document.querySelectorAll('.est-check');
+    const retainerSel = document.getElementById('retainerPlan');
+    const addonSel = document.getElementById('addonPlan');
+    const amountEl = document.getElementById('estAmount');
+    if(!amountEl) return;
+
+    function formatINR(n){
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+
+    function recalc(){
+      let base = 0;
+      checks.forEach(c => { if(c.checked) base += parseFloat(c.dataset.price); });
+      const mult = parseFloat(retainerSel.options[retainerSel.selectedIndex].dataset.mult);
+      const addon = parseFloat(addonSel.value);
+      const total = (base * mult) + addon;
+      amountEl.style.opacity = 0.3;
+      setTimeout(() => {
+        amountEl.textContent = formatINR(total);
+        amountEl.style.opacity = 1;
+      }, 120);
+    }
+
+    checks.forEach(c => c.addEventListener('change', recalc));
+    retainerSel.addEventListener('change', recalc);
+    addonSel.addEventListener('change', recalc);
+    recalc();
+  })();
+ </script>
+{% endblock %}

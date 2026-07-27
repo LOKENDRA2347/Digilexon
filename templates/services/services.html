@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Services | DigiLexon{% endblock %}
+
+{% block content %}
+
+<main>
+
+  <section class="page-hero">
+    <canvas id="particleField"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1" data-depth="0.04"></div>
+    <div class="orb orb-2" data-depth="0.07"></div>
+
+    <div class="wrap hero-inner">
+      <div class="breadcrumb">
+        <a href="{% url 'home' %}">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
+
+      <div class="eyebrow">What we do</div>
+
+      <h1 id="heroHeadline">
+        Six disciplines, <em>one system</em> aimed at growth.
+      </h1>
+
+      <p class="hero-sub">
+        Every service exists to move one number — revenue.
+        Mix and match, or hand us the whole engine.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-pad" style="padding-top:70px;">
+    <div class="wrap">
+
+      <div class="services-grid reveal-stagger">
+
+        {% for service in services %}
+
+        <div class="service-card tilt">
+
+          <div class="tilt-glare"></div>
+
+          <div class="service-index">
+            {{ forloop.counter|stringformat:"02d" }}
+          </div>
+          
+
+          <h3><span class="service-icon">
+              <i class="{{ service.icon }}"></i>
+          </span>{{ service.title }}</h3>
+
+          <p>{{ service.short_description }}</p>
+
+        </div>
+
+        {% empty %}
+
+        <h2>No services available.</h2>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="wrap expertise">
+
+      <div class="reveal">
+        <div class="eyebrow">How we price it</div>
+
+        <h2 style="font-size:clamp(28px,3.6vw,42px);margin-bottom:22px;">
+          Pick one service or run the full engine.
+        </h2>
+
+        <p style="color:var(--muted);font-size:15.5px;line-height:1.7;">
+          Most clients start with one channel to prove the model,
+          then expand. Retainers scale with scope — no bundled
+          services you didn't ask for.
+        </p>
+      </div>
+
+      <div class="reveal">
+
+        <div class="bar-row">
+          <div class="bar-top">
+            <span>Strategy &amp; Positioning</span>
+            <span class="pct">95%</span>
+          </div>
+
+          <div class="bar-track">
+            <div class="bar-fill" data-pct="95"></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-top">
+            <span>Creative Execution</span>
+            <span class="pct">89%</span>
+          </div>
+
+          <div class="bar-track">
+            <div class="bar-fill" data-pct="89"></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-top">
+            <span>Performance &amp; Media Buying</span>
+            <span class="pct">93%</span>
+          </div>
+
+          <div class="bar-track">
+            <div class="bar-fill" data-pct="93"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+
+      <div class="eyebrow" style="justify-content:center;">
+        Let's talk
+      </div>
+
+      <h2>
+        Ready to make your marketing budget accountable?
+      </h2>
+
+      <div class="btn-row">
+        <span class="magnetic">
+          <a href="{% url "contact" %}" class="btn btn-primary">
+            Start a project
+          </a>
+        </span>
+
+        <span class="magnetic">
+          <a href="mailto:{{site_settings.email}}" class="btn btn-ghost">
+            {{site_settings.email}}
+          </a>
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}
